@@ -9,7 +9,7 @@ import utils.ConfigsReader;
 public class SearchEmployeeSteps {
 
     String expectedEmployeeID = "0856";
-    String expectedEmployeeName = "William";
+    String expectedEmployeeName = "Robin William";
 
     @Given("user is on the Exelenter homepage")
     public void user_is_on_the_exelenter_homepage() {
@@ -44,7 +44,8 @@ public class SearchEmployeeSteps {
 
     @Then("the employee information is displayed on the employee list table")
     public void the_employee_information_is_displayed_on_the_employee_list_table() {
-        System.out.println("");
+        System.out.println("Employee displayed");
+        tearDown();
     }
 
     @And("user enters an existing employee Name in the name-search-field")

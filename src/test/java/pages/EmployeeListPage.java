@@ -24,6 +24,7 @@ public class EmployeeListPage extends BaseClass {
         employeeIdSearchField.sendKeys(empId);
     }
     public void searchEmployeeIdByName(String empName){
+        wait(1);
         employeeNameSearchField.sendKeys(empName);
     }
 }
