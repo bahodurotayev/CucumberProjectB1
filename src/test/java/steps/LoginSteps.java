@@ -26,7 +26,7 @@ public class LoginSteps {
     public void user_successfully_logged_in() {
         Assert.assertTrue("Dashboard logo is not displayed",dashboardPage.dashboardLogo.isDisplayed());
         System.out.println("Successfully logged in");
-        tearDown();
+
     }
 
     @Given("user login with valid username and invalid password")
@@ -45,13 +45,13 @@ public class LoginSteps {
     public void userShouldGetInvalidErrorMessage() {
         Assert.assertEquals(loginPage.loginErrorMessage.getText(), invalidCredentials);
         System.out.println(invalidCredentials);
-        tearDown();
+
     }
 
     @Then("user should get empty error message")
     public void userShouldGetEmptyErrorMessage() {
         Assert.assertEquals(loginPage.loginErrorMessage.getText(), emptyCredentials);
         System.out.println(emptyCredentials);
-        tearDown();
+
     }
 }

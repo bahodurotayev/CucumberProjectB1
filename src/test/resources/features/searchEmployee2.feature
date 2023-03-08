@@ -1,18 +1,16 @@
 @regression
 Feature: Searching existing Employee
 
-  Scenario: Search for an employee by ID
-    #Given user is on the Exelenter homepage                       <= This line replaced with Hooks
+  Background:
     And user logs in with valid admin credentials
-    And user navigates to the employee list page
+    * user navigates to the employee list page
+
+  Scenario: Search for an employee by ID
     And user enters an existing employee ID in the id-search-field
     When  user clicks on the search button
     Then the employee information is displayed on the employee list table
 
     Scenario: Search for an employee by name
-     # Given user is on the Exelenter homepage
-      And user logs in with valid admin credentials
-      * user navigates to the employee list page
       * user enters an existing employee Name in the name-search-field
       When  user clicks on the search button
       Then the employee information is displayed on the employee list table
