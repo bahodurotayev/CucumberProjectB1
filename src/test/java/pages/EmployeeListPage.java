@@ -20,11 +20,24 @@ public class EmployeeListPage extends BaseClass {
     @FindBy(id = "searchBtn")
     public WebElement employeeListSearchButton;
 
+    @FindBy(xpath = "(//*[@id='resultTable']/tbody//a)[1]")
+    public WebElement tableEmployeeId;
+
+    @FindBy(id = "personal_txtEmployeeId")
+    public WebElement personalEmployeeId;
+
+    @FindBy(id = "frmEmpPersonalDetails")
+    public WebElement personalDetailsForm;
+
+
     public void searchEmployeeIdById(String empId){
         employeeIdSearchField.sendKeys(empId);
     }
     public void searchEmployeeIdByName(String empName){
         wait(1);
         employeeNameSearchField.sendKeys(empName);
+    }
+    public void checkEmployeeListProfileById(){
+        clickButWaitForClickability(tableEmployeeId);
     }
 }

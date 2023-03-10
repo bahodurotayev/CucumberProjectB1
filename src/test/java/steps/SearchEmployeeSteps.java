@@ -1,12 +1,14 @@
 package steps;
 
 import static base.BaseClass.*;
+
+import base.BaseClass;
 import io.cucumber.java.en.*;
 import pages.EmployeeListPage;
 import pages.PIMPage;
 import utils.ConfigsReader;
 
-public class SearchEmployeeSteps {
+public class SearchEmployeeSteps extends BaseClass {
 
     String expectedEmployeeID = "0856";
     String expectedEmployeeName = "Robin William";
@@ -44,8 +46,10 @@ public class SearchEmployeeSteps {
 
     @Then("the employee information is displayed on the employee list table")
     public void the_employee_information_is_displayed_on_the_employee_list_table() {
-        System.out.println("Employee displayed");
-        tearDown();
+        employeeListPage.checkEmployeeListProfileById();
+        wait(2);
+        System.out.println(employeeListPage.personalDetailsForm.isDisplayed());
+
     }
 
     @And("user enters an existing employee Name in the name-search-field")

@@ -7,7 +7,7 @@ Feature: Searching existing Employee
 
   Scenario: Search for an employee by ID
     And user enters an existing employee ID in the id-search-field
-#    When  user clicks on the search button
+    When  user clicks on the search button
     Then the employee information is displayed on the employee list table
 
     Scenario: Search for an employee by name
