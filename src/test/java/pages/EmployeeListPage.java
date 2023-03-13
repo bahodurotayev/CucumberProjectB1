@@ -29,6 +29,9 @@ public class EmployeeListPage extends BaseClass {
     @FindBy(id = "frmEmpPersonalDetails")
     public WebElement personalDetailsForm;
 
+    @FindBy(css = "#profile-pic h1")
+    public WebElement personalPicHeader;
+
 
     public void searchEmployeeIdById(String empId){
         employeeIdSearchField.sendKeys(empId);
