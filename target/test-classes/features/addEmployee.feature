@@ -23,8 +23,8 @@ Feature: As an Admin User, I should be able to add new employee(s)
     And user clicks save button
     Then user verifies employee "<verify full name>" successfully created
     Examples:
-      | firstName | lastName |employeeId| verify full name |
-      | Sophia    | Kim      |          | Sophia Kim       |
+      | firstName | lastName | employeeId | verify full name |
+      | Sophia    | Kim      |            | Sophia Kim       |
 
   Scenario Outline: Add an employee with login credentials
     When user enters "<firstName>" and "<lastName>"
@@ -50,3 +50,12 @@ Feature: As an Admin User, I should be able to add new employee(s)
       | Tony      | Rip      | 2001       |          |          |                | Tony Rip         |
       | Bob       | Star     |            |          |          |                | Bob Star         |
       | Emma      | Maria    | 2002       | YES      | Emmmar   | Exelenter2023! | Emma Maria       |
+
+
+  Scenario: Adding multiple employee
+    When user enters employee full name and click on save button
+      | FirstName | MiddleName | LastName |
+      | Tatum     | T.         | Carson   |
+      | Malia     | S.         | Santana  |
+      | Bear      | B.         | Franco   |
+    Then employee is added successfully

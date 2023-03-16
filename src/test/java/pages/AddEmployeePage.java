@@ -15,6 +15,9 @@ public class AddEmployeePage extends BaseClass {
     public WebElement lastName;
     @FindBy(id = "employeeId")
     public WebElement employeeId;
+    @FindBy(id = "middleName")
+    public WebElement middleName;
+
     @FindBy(id = "photofile")
     public WebElement uploadPhoto;
     @FindBy(id = "chkLogin")
