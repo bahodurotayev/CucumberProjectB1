@@ -1,6 +1,6 @@
 Feature: As an Invalid User, I should not be able to login using invalid login credentials, and if I try, I should see an error message.
 
-  Scenario: 1 way
+  Scenario:
     When user enter username and password credential and click login
       | Username | Password         | ErrorMess                |
       | Admin    | 123162           | Invalid credentials      |

@@ -19,10 +19,7 @@ public class LoginNegativeTesting extends BaseClass {
             if (each.get("Password") != null){
                 sendText(loginPage.password,each.get("Password"));
             }
-
             clickButWaitForClickability(loginPage.loginBtn);
-
-            wait(3);
             Assert.assertEquals(each.get("ErrorMess"), loginPage.loginErrorMessage.getText());
             driver.navigate().refresh();
         }
