@@ -72,13 +72,16 @@ public class AddEmployee extends BaseClass {
 
             Assert.assertEquals("user does not match", expectedFullName, actualFullName);
 
-            System.out.println(count);
-            wait(3);
-            if (count!= 1){
+           //1way
+
+//            if (count!= 1){
+//                pimPage.addEmployee.click();
+//            }
+//            count--;
+
+            if (!each.get("FirstName").equals(mapList.get(mapList.size()-1).get("FirstName"))){
                 pimPage.addEmployee.click();
             }
-            count--;
-            wait(1);
         }
     }
 

@@ -14,6 +14,8 @@ public class LoginNegativeTesting extends BaseClass {
         for (Map<String, String> each :maps) {
             if(each.get("Username") != null){
                 sendText(loginPage.username,each.get("Username"));
+            }else {
+                loginPage.username.clear();
             }
             wait(3);
             if (each.get("Password") != null){
@@ -21,7 +23,7 @@ public class LoginNegativeTesting extends BaseClass {
             }
             clickButWaitForClickability(loginPage.loginBtn);
             Assert.assertEquals(each.get("ErrorMess"), loginPage.loginErrorMessage.getText());
-            driver.navigate().refresh();
+            //driver.navigate().refresh();
         }
     }
 
