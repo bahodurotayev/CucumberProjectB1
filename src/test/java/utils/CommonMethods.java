@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
@@ -19,7 +20,7 @@ import static base.BaseClass.driver;
 
 /**
  * Note: This is our BANK, for reusing the methods elsewhere in the framework when we need it.
- *   We store all common methods for usability here. This will help us to avoid DRY principle of programming/coding.
+ * We store all common methods for usability here. This will help us to avoid DRY principle of programming/coding.
  */
 
 
@@ -27,6 +28,7 @@ public class CommonMethods extends PageInitializer {
 
     /**
      * Method will switch focus to next window/tab based on the window title/name
+     *
      * @param windowTitle String
      */
     public static void switchToWindow(String windowTitle) {
@@ -42,6 +44,7 @@ public class CommonMethods extends PageInitializer {
 
     /**
      * This method will clear and then send value to input field(s).
+     *
      * @param element WebElement
      * @param value   String
      */
@@ -52,6 +55,7 @@ public class CommonMethods extends PageInitializer {
 
     /**
      * Simple click method
+     *
      * @param element WebElement
      */
     public static void click(WebElement element) {
@@ -83,6 +87,7 @@ public class CommonMethods extends PageInitializer {
 
     /**
      * Method will wait for the given element based on the visibility of Element
+     *
      * @param by By locator
      */
     public static void waitForVisibilityOfElement(By by) {
@@ -219,8 +224,9 @@ public class CommonMethods extends PageInitializer {
 
     /**
      * Method will scroll down to paragraph(s) given by number of paragraph(s) as index and locator of <p> as second argument
+     *
      * @param index number of paragraph(s) to scroll down to. How many paragraphs you want to scroll to, enter it here.
-     * @param by web element locator of paragraph goes here.
+     * @param by    web element locator of paragraph goes here.
      */
     public static void scrollToParagraph(int index, By by) {
         String script = "window.scrollTo(0, document.body.scrollHeight)";
@@ -278,6 +284,7 @@ public class CommonMethods extends PageInitializer {
 
     /**
      * Method will scroll up based on given pixel
+     *
      * @param pixel int
      */
     public static void scrollUp(int pixel) {
@@ -286,6 +293,7 @@ public class CommonMethods extends PageInitializer {
 
     /**
      * Method will take a screenshot when called. Extension defined as .png (You can change to .jpeg from CommonMethods when needed)
+     *
      * @param fileName String as screenshot name
      */
     public static String takeScreenshot(String fileName) {
@@ -311,13 +319,13 @@ public class CommonMethods extends PageInitializer {
         return fileName;
     }*/
 
-    public static String randomStrongPassWord(){
+    public static String randomStrongPassWord() {
         String passWord = "";
         Random rnd = new Random();
         String lowerLetter = "abcdefghijklmnoprstuwxyz";
         String capitalLetters = "ABCDEFGHIJKLMNOPRSTUWXYZ";
         String specialChar = "!#$%&()*+,-.:;<=>?@[]^_{|}~";
-        while (passWord.length() < 12){
+        while (passWord.length() < 12) {
             passWord += lowerLetter.charAt(rnd.nextInt(lowerLetter.length()));
             passWord += capitalLetters.charAt(rnd.nextInt(capitalLetters.length()));
             passWord += specialChar.charAt(rnd.nextInt(specialChar.length()));
@@ -325,5 +333,6 @@ public class CommonMethods extends PageInitializer {
         }
         return passWord;
     }
+
 
 }

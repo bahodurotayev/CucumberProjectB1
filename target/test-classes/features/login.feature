@@ -9,7 +9,7 @@ Feature: Login Test
    # Given user navigates to exelenter page
     And user login with valid username and invalid password
     Then user should get invalid error message
-
+@login
   Scenario: user login with empty credentials
    # Given user navigates to exelenter page
     And user login with empty credentials

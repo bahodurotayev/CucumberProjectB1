@@ -59,3 +59,8 @@ Feature: As an Admin User, I should be able to add new employee(s)
       | Malia     | S.         | Santana  |
       | Bear      | B.         | Franco   |
     Then employee is added successfully
+
+  @excel
+  Scenario: Adding multiple employee from excel
+    When user enters employee data from the "Employee" sheet
+    Then new employee is added successfully using Excel import

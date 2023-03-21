@@ -4,6 +4,8 @@ import base.BaseClass;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import utils.Constants;
+import utils.ExcelUtility;
 
 import java.util.List;
 import java.util.Map;
@@ -67,19 +69,19 @@ public class AddEmployee extends BaseClass {
 
             clickButWaitForClickability(addEmployeePage.saveButton);
 
-            String expectedFullName = each.get("FirstName") + " " + each.get("MiddleName")+" " + each.get("LastName");
+            String expectedFullName = each.get("FirstName") + " " + each.get("MiddleName") + " " + each.get("LastName");
             String actualFullName = employeeListPage.personalPicHeader.getText();
 
             Assert.assertEquals("user does not match", expectedFullName, actualFullName);
 
-           //1way
+            //1way
 
 //            if (count!= 1){
 //                pimPage.addEmployee.click();
 //            }
 //            count--;
 
-            if (!each.get("FirstName").equals(mapList.get(mapList.size()-1).get("FirstName"))){
+            if (!each.get("FirstName").equals(mapList.get(mapList.size() - 1).get("FirstName"))) {
                 pimPage.addEmployee.click();
             }
         }
@@ -87,6 +89,30 @@ public class AddEmployee extends BaseClass {
 
     @Then("employee is added successfully")
     public void employee_is_added_successfully() {
+        System.out.println("All employees are added successfully using dataTable");
+    }
 
+    @When("user enters employee data from the {string} sheet")
+    public void user_enters_employee_data_from_the_sheet(String sheetName) {
+        List<Map<String, String>> maps = ExcelUtility.readFromExcelMap(Constants.TEST_DATA_EXCEL, sheetName);
+        for (Map<String, String> map : maps) {
+            addEmployeePage.firstName.sendKeys(map.get("Firstname"));
+            sendText(addEmployeePage.lastName, map.get("Lastname"));
+            clickButWaitForClickability(addEmployeePage.saveButton);
+
+            Assert.assertEquals("Full name does not match", employeeListPage.personalPicHeader.getText(), map.get("Firstname") + " " + map.get("Lastname"));
+
+            System.out.println(employeeListPage.personalPicHeader.getText() + "added successfully using Excel import");
+
+            if (!map.get("Firstname").equals(maps.get(maps.size() - 1).get("Firstname"))) {
+                pimPage.addEmployee.click();
+            }
+
+        }
+    }
+
+    @Then("new employee is added successfully using Excel import")
+    public void new_employee_is_added_successfully_using_excel_import() {
+        System.out.println("All new employees are added successfully using Excel import");
     }
 }
