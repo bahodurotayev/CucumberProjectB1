@@ -1,4 +1,4 @@
-Feature: As an Admin User, I should be able to add new employee(s)
+Feature:
   i.Add an employee with first name and last name only
   ii.Add an employee without an employee ID
   iii.Add an employee with login credentials
