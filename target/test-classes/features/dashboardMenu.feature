@@ -17,7 +17,7 @@ Feature: Dashboard menu of Exelenter
       | Leave       |
       | Time        |
       | Recruitment |
-      | My info     |
+      | My Info     |
       | Performance |
       | Dashboard   |
       | Directory   |

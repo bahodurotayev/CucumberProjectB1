@@ -56,7 +56,7 @@ Feature: adding new employee
     When user enters employee full name and click on save button
       | FirstName | MiddleName | LastName |
       | Tatum     | T.         | Carson   |
-      | Malia     | S.         | Santana  |
+      | Mal ia     | S.         | Santana  |
       | Bear      | B.         | Franco   |
     Then employee is added successfully
 
