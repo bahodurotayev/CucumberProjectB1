@@ -10,7 +10,7 @@ import utils.ExcelUtility;
 import java.util.List;
 import java.util.Map;
 
-public class AddEmployee extends BaseClass {
+public class AddEmployeeSteps extends BaseClass {
 
     @Then("user navigates to addEmployee Page")
     public void userNavigatesToAddEmployeePage() {

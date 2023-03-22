@@ -7,7 +7,7 @@ import org.junit.Assert;
 import java.util.List;
 import java.util.Map;
 
-public class LoginNegativeTesting extends BaseClass {
+public class LoginNegativeTestingSteps extends BaseClass {
     @When("user enter username and password credential and click login")
     public void user_enter_username_and_password_credential_and_click_login(io.cucumber.datatable.DataTable dataTable) {
         List<Map<String, String>> maps = dataTable.asMaps();

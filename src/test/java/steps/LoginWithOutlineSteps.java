@@ -4,7 +4,7 @@ import base.BaseClass;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 
-public class LoginWithOutline extends BaseClass {
+public class LoginWithOutlineSteps extends BaseClass {
     @When("user enters a valid username {string} and a valid password {string}")
     public void user_enters_a_valid_username_and_a_valid_password(String string, String string2) {
         loginPage.username.sendKeys(string);
