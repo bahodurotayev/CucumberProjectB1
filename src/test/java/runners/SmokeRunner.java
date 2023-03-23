@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
         "pretty",
         "html:target/cucumber-report/cucumberReport.html",
         "json:target/cucumber-report/cucumberReport.json",
+        "rerun:target/failed.txt"
 }
 )
 

@@ -1,15 +1,18 @@
 Feature: Login Test
+
   @smoke
   Scenario: user login with valid credentials
     #Given user navigates to exelenter page            <=This line is replaced with Hooks
     And user login with valid username and password
     Then user successfully logged in
 
+  @smoke
   Scenario: user login with valid username and invalid password
    # Given user navigates to exelenter page
     And user login with valid username and invalid password
     Then user should get invalid error message
-@login
+
+  @login
   Scenario: user login with empty credentials
    # Given user navigates to exelenter page
     And user login with empty credentials

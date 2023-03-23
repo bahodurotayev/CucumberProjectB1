@@ -83,8 +83,8 @@
                         </properties>
 
                         <includes>
-                            <include>**/*TestRunner.java</include>
-<!--                            <include>**/*SmokeRunner.java</include>-->
+<!--                            <include>**/*TestRunner.java</include>-->
+                            <include>**/*SmokeRunner.java</include>
 <!--                            <include>**/*Regression.java</include>-->
                         </includes>
                     </configuration>
