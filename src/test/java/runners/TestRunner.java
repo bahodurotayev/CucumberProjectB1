@@ -18,6 +18,7 @@ import org.junit.runner.RunWith;
         "pretty",  // Prints Gherkin steps in the console AND terminal/command line
         "html:target/cucumber-report/cucumberReport.html",
         "json:target/cucumber-report/cucumberReport.json",
+        "rerun:target/failed.txt"
 }
 )
 
