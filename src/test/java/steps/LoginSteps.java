@@ -43,7 +43,7 @@ public class LoginSteps {
 
     @Then("user should get invalid error message")
     public void userShouldGetInvalidErrorMessage() {
-        Assert.fail();// just for the practice of failed text intentionally failed.
+        //Assert.fail();// just for the practice of failed text intentionally failed.
         Assert.assertEquals(loginPage.loginErrorMessage.getText(), invalidCredentials);
         System.out.println(invalidCredentials);
 

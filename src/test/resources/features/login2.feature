@@ -20,7 +20,7 @@ Feature: Login Test
     Examples:
       | username | password         | user message    |
       | Admin    | Exelent2022Sdet! | Welcome Admin   |
-      | EssUser  | Ess@2023         | Welcome Johnaa    |
-      | EssUser  | Ess@2023         | Welcome John111 |
+      | EssUser  | Ess@2023         | Welcome John    |
+      | EssUser  | Ess@2023         | Welcome John |
 
 
