@@ -18,6 +18,7 @@ public class BaseClass extends CommonMethods {
     public static WebDriver driver;
     public static void setUp() {
         ConfigsReader.loadProperties(Constants.CONFIGURATION_FILEPATH); // Replaced hard-coded filePath with Constants
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
         String headless = ConfigsReader.getProperties("headless");
         switch (ConfigsReader.getProperties("browser").toLowerCase()) {
             case "chrome" -> {
@@ -27,6 +28,7 @@ public class BaseClass extends CommonMethods {
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--headless", "--log-level=3");
                     options.addArguments("--disable-logging");
+                    options.addArguments("--remote-allow-origins=*");
                     driver = new ChromeDriver(options);
                 }else {
                     driver = new ChromeDriver();
@@ -39,6 +41,7 @@ public class BaseClass extends CommonMethods {
                     EdgeOptions options = new EdgeOptions();
                     options.addArguments("--headless");
                     options.addArguments("--disable-logging");
+                    options.addArguments("--remote-allow-origins=*");
                     driver = new EdgeDriver(options);
                 }else {
                     driver = new EdgeDriver();

@@ -1,8 +1,7 @@
 package steps;
 
 import base.BaseClass;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import io.cucumber.java.*;
 import io.cucumber.java.Scenario;
 import utils.CommonMethods;
 
